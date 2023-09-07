@@ -1,0 +1,85 @@
+import java.util.*;
+class Human{
+    private String name;
+    private String gender;
+    private int age;
+    public void setAge(int age){
+        this.age = age;
+    }
+    public int getAge(){
+        return age;
+    }
+};
+class Student extends Human{
+    private int roll_no;
+    private String classes;
+    private int semester;
+    private double cpi;
+    public Student(int age, String classes, int roll_no, int semester, double cpi){
+            super();
+            setAge(age);
+            this.classes = classes;
+            this.roll_no = roll_no;
+            this.semester=semester;
+            this.cpi = cpi;
+    }
+    public String getClasses(){
+        return classes;
+    }
+    public int getRollno(){
+        return roll_no;
+    }
+    public int getSemester(){
+        return semester;
+    }
+    public double getCpi(){
+        return cpi;
+    }
+};
+class Faculty extends Human{
+    private int empId;
+    private int salary;
+    private String specialization;
+    public Faculty( int age, int empId, int salary, String specialization){
+            super();
+            setAge(age);
+            this.empId = empId;
+            this.salary = salary;
+            this.specialization = specialization;
+    }
+    public String getSpecialization(){
+        return specialization;
+    }
+    public int getEmpId(){
+        return empId;
+    }
+    public int getSalery(){
+        return salary;
+    }
+};
+class Main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		Student student = new Student(19, "IT", 221081023, 3 , 9.05);
+	    System.out.println("Student Info:");
+        System.out.println("Age: " + student.getAge());
+        System.out.println("Roll No: " + student.getRollno());
+        System.out.println("Class: " + student.getClasses());
+        System.out.println("Semester: " + student.getSemester());
+        System.out.println("CPI: " + student.getCpi());
+		
+		System.out.println();
+		
+		Faculty faculty = new Faculty(32, 84, 250000, "CyberSecurity");
+		System.out.println("Faculty Info:");
+        System.out.println("Age: " + faculty.getAge());
+        System.out.println("Id: " + faculty.getEmpId());
+        System.out.println("Salary: " + faculty.getSalery());
+        System.out.println("Specialization: " + faculty.getSpecialization());
+		System.out.println();
+		System.out.println("Enter new age of student:");
+		int temp = sc.nextInt();
+		System.out.println("Updated Age: " + temp);
+	}
+}
